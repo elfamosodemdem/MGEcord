@@ -18,7 +18,7 @@
 
 export const WEBPACK_CHUNK = "webpackChunkdiscord_app";
 export const REACT_GLOBAL = "Vencord.Webpack.Common.React";
-export const SUPPORT_CHANNEL_ID = "1026515880080842772";
+export const SUPPORT_CHANNEL_ID = "1287177977750356181";
 
 export interface Dev {
     name: string;
@@ -575,6 +575,10 @@ export const Devs = /* #__PURE__*/ Object.freeze({
         name: "RamziAH",
         id: 1279957227612147747n,
     },
+    atomkern: {
+        name: "atomkern",
+        id: 942525144847486988n,
+    }
 } satisfies Record<string, Dev>);
 
 // iife so #__PURE__ works correctly
