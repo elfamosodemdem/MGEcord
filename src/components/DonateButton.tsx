@@ -26,10 +26,10 @@ export default function DonateButton(props: any) {
             {...props}
             look={Button.Looks.LINK}
             color={Button.Colors.TRANSPARENT}
-            onClick={() => VencordNative.native.openExternal("https://github.com/sponsors/Vendicated")}
+            onClick={() => VencordNative.native.openExternal("https://petain.net")}
         >
             <Heart />
-            Donate
+            PETAIN.NET
         </Button>
     );
 }
