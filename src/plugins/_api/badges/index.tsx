@@ -31,10 +31,10 @@ import definePlugin from "@utils/types";
 import { Forms, Toasts, UserStore } from "@webpack/common";
 import { User } from "discord-types/general";
 
-const CONTRIBUTOR_BADGE = "https://vencord.dev/assets/favicon.png";
+const CONTRIBUTOR_BADGE = "https://cdn.discordapp.com/emojis/1258849802289021099.webp";
 
 const ContributorBadge: ProfileBadge = {
-    description: "Vencord Contributor",
+    description: "MGEcord Contributor",
     image: CONTRIBUTOR_BADGE,
     position: BadgePosition.START,
     shouldShow: ({ userId }) => isPluginDev(userId),

@@ -21,7 +21,6 @@ import { useSettings } from "@api/Settings";
 import { classNameFactory } from "@api/Styles";
 import DonateButton from "@components/DonateButton";
 import { openPluginModal } from "@components/PluginSettings/PluginModal";
-import { gitRemote } from "@shared/vencordUserAgent";
 import { Margins } from "@utils/margins";
 import { identity } from "@utils/misc";
 import { relaunch, showItemInFolder } from "@utils/native";
@@ -35,8 +34,8 @@ import { SettingsTab, wrapTab } from "./shared";
 
 const cl = classNameFactory("vc-settings-");
 
-const DEFAULT_DONATE_IMAGE = "https://cdn.discordapp.com/emojis/1026533090627174460.png";
-const SHIGGY_DONATE_IMAGE = "https://media.discordapp.net/stickers/1039992459209490513.png";
+const DEFAULT_DONATE_IMAGE = "https://media1.tenor.com/m/AFoPMKzrdsAAAAAC/tf2-mge.gif";
+const SHIGGY_DONATE_IMAGE = "https://cdn.discordapp.com/attachments/1287177977750356181/1289748315721695294/convert.gif?ex=66f9f338&is=66f8a1b8&hm=03b7ee61eaee7a4acda91df71486ffb9de7876aeb95cad4136d0ae987236c39b&";
 
 type KeysOfType<Object, Type> = {
     [K in keyof Object]: Object[K] extends Type ? K : never;
@@ -98,7 +97,7 @@ function VencordSettings() {
         ];
 
     return (
-        <SettingsTab title="Vencord Settings">
+        <SettingsTab title="MGEcord Settings">
             <DonateCard image={donateImage} />
             <Forms.FormSection title="Quick Actions">
                 <QuickActionCard>
@@ -129,7 +128,7 @@ function VencordSettings() {
                     <QuickAction
                         Icon={GithubIcon}
                         text="View Source Code"
-                        action={() => VencordNative.native.openExternal("https://github.com/" + gitRemote)}
+                        action={() => VencordNative.native.openExternal("https://github.com/elfamosodemdem/MGEcord/")}
                     />
                 </QuickActionCard>
             </Forms.FormSection>
@@ -248,7 +247,7 @@ function DonateCard({ image }: DonateCardProps) {
         <Card className={cl("card", "donate")}>
             <div>
                 <Forms.FormTitle tag="h5">Support the Project</Forms.FormTitle>
-                <Forms.FormText>Please consider supporting the development of Vencord by donating!</Forms.FormText>
+                <Forms.FormText>Please consider supporting the development of MGEcord by using petain.net!</Forms.FormText>
                 <DonateButton style={{ transform: "translateX(-1em)" }} />
             </div>
             <img
