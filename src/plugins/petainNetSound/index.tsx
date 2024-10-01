@@ -41,9 +41,9 @@ interface IVoiceChannelEffectSendEvent {
 
 const PETAINNET = "petain.net";
 const PETAINNET_URL =
-    "https://cdn.discordapp.com/attachments/1203711313834938470/1289706770092003368/convert5.mp3?ex=66f9cc87&is=66f87b07&hm=3ae7464af8b25980b43eb7dbc3b0fe658ad51e07b51b838488f81fd63fb18e06&";
+    "https://github.com/elfamosodemdem/MGEplugin/raw/refs/heads/main/PetainNetSound/imsmarter.mp3";
 const PETAINNET_URL_HD =
-    "https://cdn.discordapp.com/attachments/1203711313834938470/1289706770092003368/convert5.mp3?ex=66f9cc87&is=66f87b07&hm=3ae7464af8b25980b43eb7dbc3b0fe658ad51e07b51b838488f81fd63fb18e06&";
+    "https://github.com/elfamosodemdem/MGEplugin/raw/refs/heads/main/PetainNetSound/imsmarter.mp3";
 
 const settings = definePluginSettings({
     volume: {
