@@ -11,7 +11,7 @@ import definePlugin from "@utils/types";
 import { findByPropsLazy } from "@webpack";
 import { DraftType, UploadHandler, UploadManager, UserUtils } from "@webpack/common";
 
-const getLastFrame = makeLazy(() => loadImage("https://raw.githubusercontent.com/elfamosodemdem/MGEplugin/refs/heads/main/cumcum/cumcum.gif"));
+const getLastFrame = makeLazy(() => loadImage("https://raw.githubusercontent.com/elfamosodemdem/MGEplugin/refs/heads/main/piss/piss.png"));
 
 const UploadStore = findByPropsLazy("getUploads");
 
@@ -40,7 +40,7 @@ async function resolveImage(options: Argument[], ctx: CommandContext, noServerPf
                 if (upload) {
                     if (!upload.isImage) {
                         UploadManager.clearAll(ctx.channel.id, DraftType.SlashCommand);
-                        throw "Upload is not an image";
+                        throw "L'upload doit être une image.";
                     }
                     return upload.item.file;
                 }
@@ -52,9 +52,9 @@ async function resolveImage(options: Argument[], ctx: CommandContext, noServerPf
                     const user = await UserUtils.getUser(opt.value);
                     return user.getAvatarURL(noServerPfp ? void 0 : ctx.guild?.id, 2048).replace(/\?size=\d+$/, "?size=2048");
                 } catch (err) {
-                    console.error("[cumcum] Failed to fetch user\n", err);
+                    console.error("[piss] Échec de récupération de l'utilisateur\n", err);
                     UploadManager.clearAll(ctx.channel.id, DraftType.SlashCommand);
-                    throw "Failed to fetch user. Check the console for more info.";
+                    throw "Impossible de récupérer l'utilisateur. Vérifiez la console pour plus d'infos.";
                 }
         }
     }
@@ -63,14 +63,14 @@ async function resolveImage(options: Argument[], ctx: CommandContext, noServerPf
 }
 
 export default definePlugin({
-    name: "cumcum",
-    description: "Adds a /cumcum slash command to create cumshots from any image",
+    name: "piss",
+    description: "Adds a /piss slash command to create piss images from any image",
     authors: [Devs.atomkern],
     commands: [
         {
             inputType: ApplicationCommandInputType.BUILT_IN,
-            name: "cumcum",
-            description: "Create a cumcum image. You can only specify one of the image options",
+            name: "piss",
+            description: "Create a piss image. You can only specify one of the image options",
             options: [
                 {
                     name: "image",
@@ -99,7 +99,7 @@ export default definePlugin({
                 const noServerPfp = findOption(opts, "no-server-pfp", false);
                 try {
                     var url = await resolveImage(opts, cmdCtx, noServerPfp);
-                    if (!url) throw "No Image spécifiée !";
+                    if (!url) throw "Aucune image spécifiée !";
                 } catch (err) {
                     UploadManager.clearAll(cmdCtx.channel.id, DraftType.SlashCommand);
                     sendBotMessage(cmdCtx.channel.id, {
@@ -132,7 +132,7 @@ export default definePlugin({
 
                 const imageDataURL = canvas.toDataURL("image/gif");
                 const file = await fetch(imageDataURL).then(response => response.blob());
-                const gifFile = new File([file], "cumcum.gif", { type: "image/gif" });
+                const gifFile = new File([file], "piss.gif", { type: "image/gif" });
 
                 setTimeout(() => UploadHandler.promptToUpload([gifFile], cmdCtx.channel, DraftType.ChannelMessage), 10);
             },
